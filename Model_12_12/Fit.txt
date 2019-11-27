@@ -1,0 +1,58 @@
+Found 24998 images belonging to 2 classes.
+Epoch 1/20
+ 598/8000 [=>............................] - ETA: 11:31 - loss: 0.6081 - acc: 0.6628 - precision_m: 0.6777 - recall_m: 0.6644- ETA: 11:39 - loss: 0.61
+C:\Users\pietr\Anaconda3\envs\tensorflow\lib\site-packages\PIL\TiffImagePlugin.py:784: UserWarning: Possibly corrupt EXIF data.  Expecting to read 32 bytes but only got 0. Skipping tag 270
+  " Skipping tag %s" % (size, len(data), tag)
+C:\Users\pietr\Anaconda3\envs\tensorflow\lib\site-packages\PIL\TiffImagePlugin.py:784: UserWarning: Possibly corrupt EXIF data.  Expecting to read 5 bytes but only got 0. Skipping tag 271
+  " Skipping tag %s" % (size, len(data), tag)
+C:\Users\pietr\Anaconda3\envs\tensorflow\lib\site-packages\PIL\TiffImagePlugin.py:784: UserWarning: Possibly corrupt EXIF data.  Expecting to read 8 bytes but only got 0. Skipping tag 272
+  " Skipping tag %s" % (size, len(data), tag)
+C:\Users\pietr\Anaconda3\envs\tensorflow\lib\site-packages\PIL\TiffImagePlugin.py:784: UserWarning: Possibly corrupt EXIF data.  Expecting to read 8 bytes but only got 0. Skipping tag 282
+  " Skipping tag %s" % (size, len(data), tag)
+C:\Users\pietr\Anaconda3\envs\tensorflow\lib\site-packages\PIL\TiffImagePlugin.py:784: UserWarning: Possibly corrupt EXIF data.  Expecting to read 8 bytes but only got 0. Skipping tag 283
+  " Skipping tag %s" % (size, len(data), tag)
+C:\Users\pietr\Anaconda3\envs\tensorflow\lib\site-packages\PIL\TiffImagePlugin.py:784: UserWarning: Possibly corrupt EXIF data.  Expecting to read 20 bytes but only got 0. Skipping tag 306
+  " Skipping tag %s" % (size, len(data), tag)
+C:\Users\pietr\Anaconda3\envs\tensorflow\lib\site-packages\PIL\TiffImagePlugin.py:784: UserWarning: Possibly corrupt EXIF data.  Expecting to read 48 bytes but only got 0. Skipping tag 532
+  " Skipping tag %s" % (size, len(data), tag)
+C:\Users\pietr\Anaconda3\envs\tensorflow\lib\site-packages\PIL\TiffImagePlugin.py:802: UserWarning: Corrupt EXIF data.  Expecting to read 2 bytes but only got 0. 
+  warnings.warn(str(msg))
+8000/8000 [==============================] - 716s 90ms/step - loss: 0.4301 - acc: 0.7957 - precision_m: 0.8028 - recall_m: 0.7928s - loss: 0.4307 - acc: 0.7953 - precision_m: - ETA
+Epoch 2/20
+8000/8000 [==============================] - 721s 90ms/step - loss: 0.2746 - acc: 0.8823 - precision_m: 0.8843 - recall_m: 0.8819
+Epoch 3/20
+8000/8000 [==============================] - 716s 90ms/step - loss: 0.1849 - acc: 0.9250 - precision_m: 0.9255 - recall_m: 0.9253
+Epoch 4/20
+8000/8000 [==============================] - 706s 88ms/step - loss: 0.1312 - acc: 0.9486 - precision_m: 0.9488 - recall_m: 0.9492
+Epoch 5/20
+8000/8000 [==============================] - 719s 90ms/step - loss: 0.1019 - acc: 0.9614 - precision_m: 0.9615 - recall_m: 0.9614
+Epoch 6/20
+8000/8000 [==============================] - 723s 90ms/step - loss: 0.0842 - acc: 0.9684 - precision_m: 0.9686 - recall_m: 0.9684
+Epoch 7/20
+8000/8000 [==============================] - 709s 89ms/step - loss: 0.0717 - acc: 0.9734 - precision_m: 0.9736 - recall_m: 0.9734
+Epoch 8/20
+8000/8000 [==============================] - 716s 90ms/step - loss: 0.0642 - acc: 0.9765 - precision_m: 0.9766 - recall_m: 0.9764s - loss: 0.0643 
+Epoch 9/20
+8000/8000 [==============================] - 722s 90ms/step - loss: 0.0568 - acc: 0.9794 - precision_m: 0.9797 - recall_m: 0.9792
+Epoch 10/20
+8000/8000 [==============================] - 712s 89ms/step - loss: 0.0511 - acc: 0.9819 - precision_m: 0.9820 - recall_m: 0.9818s - loss: 0.0511 - acc: 0.9819 - precision_m: 0.9820 - recall_m
+Epoch 11/20
+8000/8000 [==============================] - 712s 89ms/step - loss: 0.0464 - acc: 0.9837 - precision_m: 0.9840 - recall_m: 0.9834 32s 
+Epoch 12/20
+8000/8000 [==============================] - 718s 90ms/step - loss: 0.0437 - acc: 0.9845 - precision_m: 0.9844 - recall_m: 0.9843
+Epoch 13/20
+8000/8000 [==============================] - 731s 91ms/step - loss: 0.0405 - acc: 0.9858 - precision_m: 0.9857 - recall_m: 0.9858
+Epoch 14/20
+8000/8000 [==============================] - 715s 89ms/step - loss: 0.0387 - acc: 0.9865 - precision_m: 0.9865 - recall_m: 0.9866s - loss: 0.0387 - acc: 0.9865 - precision_m: 0.9866 
+Epoch 15/20
+8000/8000 [==============================] - 711s 89ms/step - loss: 0.0356 - acc: 0.9877 - precision_m: 0.9879 - recall_m: 0.9876
+Epoch 16/20
+8000/8000 [==============================] - 715s 89ms/step - loss: 0.0340 - acc: 0.9883 - precision_m: 0.9886 - recall_m: 0.9881
+Epoch 17/20
+8000/8000 [==============================] - 714s 89ms/step - loss: 0.0314 - acc: 0.9891 - precision_m: 0.9892 - recall_m: 0.9890
+Epoch 18/20
+8000/8000 [==============================] - 713s 89ms/step - loss: 0.0298 - acc: 0.9896 - precision_m: 0.9899 - recall_m: 0.9895
+Epoch 19/20
+8000/8000 [==============================] - 712s 89ms/step - loss: 0.0299 - acc: 0.9898 - precision_m: 0.9900 - recall_m: 0.9894
+Epoch 20/20
+8000/8000 [==============================] - 726s 91ms/step - loss: 0.0284 - acc: 0.9902 - precision_m: 0.9902 - recall_m: 0.9901
