@@ -17,6 +17,7 @@ Per creare il dataset è possibile accedere a [questo sito](https://download.mic
  * `Flatten_Output` --> directory che contiene l'output del livello di Flatten della CNN, utile per inserirlo in altri modelli o classificatori per testarne la potenza e il confronto con questa CNN.
  * `Weight` --> directory che contiene i pesi del primo livello della CNN
  * [Dog_Cat_Exe.py](https://github.com/CNN-Dog-Cat/ClassificationDog-Cat/blob/master/Dog_Cat_Exe.py) programma in python per l'esecuzione dei modelli già fittati e funzionanti per testarne la classificazione mediante test set e altre immagini casuali.
+ * `Tabella Valori` --> directory che contiene i valori dei vari modelli
 
 ## Passi da seguire
   * Scaricare il data set a [questo link](https://download.microsoft.com/download/3/E/1/3E1C3F21-ECDB-4869-8368-6DEBA77B919F/kagglecatsanddogs_3367a.zip)
