@@ -36,3 +36,7 @@ Per creare il dataset è possibile accedere a [questo sito](https://download.mic
     * I valori che sono stati utilizzati per testare il modello
     * I numeri di errori di classificazione e i relativo errore di classificazione in percentuale(%)
     
+    
+## Tabella Valori
+<img src="https://github.com/CNN-Dog-Cat/ClassificationDog-Cat/blob/master/Tabella%20Valori/TabellaValori.png"/>
+    
