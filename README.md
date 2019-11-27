@@ -1,5 +1,7 @@
 # Riconoscimento visivo di un cane/gatto per classi sbilanciate
 
+<img src="https://live.staticflickr.com/3640/3639419066_d8de3661a2_b.jpg"/>
+
 La seguente repo contiene il programma in Python per progettare una CNN per il riconoscimento di cane/gatto attraverso l'inseriemnto di una foto (o serie di foto).
 
 Per creare il dataset è possibile accedere a [questo sito](https://download.microsoft.com/download/3/E/1/3E1C3F21-ECDB-4869-8368-6DEBA77B919F/kagglecatsanddogs_3367a.zip)e scaricare il dataset di cani e gatti messo a disposizione. Si avrà una cartella con all'interno 12500 immagini di gatti e 12500 immagini di cani; da questo dataset andremo a creare un treaning set(per addestrare il modello) e un test set(per le prove di riconscimento).
