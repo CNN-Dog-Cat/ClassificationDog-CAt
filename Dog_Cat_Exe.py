@@ -6,7 +6,7 @@ import os
 from tqdm import tqdm
 from tensorflow.keras import backend as K
 import tensorflow as tf
-from sklearn.metrics import confusion_matrix
+from sklearn.metrics import confusion_matrix, classification_report
 
 #Funzione per il calcolo del Recall
 def recall_m(y_true, y_pred):
@@ -36,38 +36,42 @@ while True:
     errore_scelta = 0
 
     if scelta == '1':
-        file_json = 'Desktop/CNN/Model_12_12/model.json'
-        file_model = 'Desktop/CNN/Model_12_12/model.h5'
-        file_flatten = 'Desktop/CNN/Flatten_Output/12_12/12_12_flatten_out.txt'
+        file_json = 'Desktop/CNN/Model_12_12/model_simple.json'
+        file_model = 'Desktop/CNN/Model_12_12/model_simple.h5'
+        file_flatten = 'Desktop/CNN/Flatten_Output/12_12/12_12_flatten_out.csv'
         file_weight = 'Desktop/CNN/Weight/12_12/12_12_weight.txt'
         file_matrix = 'Desktop/CNN/Model_12_12/Matrice confusione/matrix_12_12.txt'
+        file_value = 'Desktop/CNN/Model_12_12/values.txt'
         errore_scelta = 0
     else:
         errore_scelta = errore_scelta + 1
         if scelta == '2':
-            file_json = 'Desktop/CNN/Model_12_9/model.json'
-            file_model = 'Desktop/CNN/Model_12_9/model.h5'
-            file_flatten = 'Desktop/CNN/Flatten_Output/12_9/12_9_flatten_out.txt'
+            file_json = 'Desktop/CNN/Model_12_9/model_simple.json'
+            file_model = 'Desktop/CNN/Model_12_9/model_simple.h5'
+            file_flatten = 'Desktop/CNN/Flatten_Output/12_9/12_9_flatten_out.csv'
             file_weight = 'Desktop/CNN/Weight/12_9/12_9_weight.txt'
             file_matrix = 'Desktop/CNN/Model_12_9/Matrice confusione/matrix_12_9.txt'
+            file_value = 'Desktop/CNN/Model_12_9/values.txt'
             errore_scelta = 0
         else:
             errore_scelta = errore_scelta + 1
             if scelta == '3':
-                file_json = 'Desktop/CNN/Model_12_5/model.json'
-                file_model = 'Desktop/CNN/Model_12_5/model.h5'
-                file_flatten = 'Desktop/CNN/Flatten_Output/12_5/12_5_flatten_out.txt'
+                file_json = 'Desktop/CNN/Model_12_5/model_simple.json'
+                file_model = 'Desktop/CNN/Model_12_5/model_simple.h5'
+                file_flatten = 'Desktop/CNN/Flatten_Output/12_5/12_5_flatten_out.csv'
                 file_weight = 'Desktop/CNN/Weight/12_5/12_5_weight.txt'
                 file_matrix = 'Desktop/CNN/Model_12_5/Matrice confusione/matrix_12_5.txt'
+                file_value = 'Desktop/CNN/Model_12_5/values.txt'
                 errore_scelta = 0
             else:
                 errore_scelta = errore_scelta + 1
                 if scelta == '4':
-                    file_json = 'Desktop/CNN/Model_12_1/model.json'
-                    file_model = 'Desktop/CNN/Model_12_1/model.h5'
-                    file_flatten = 'Desktop/CNN/Flatten_Output/12_1/12_1_flatten_out.txt'
+                    file_json = 'Desktop/CNN/Model_12_1/model_simple.json'
+                    file_model = 'Desktop/CNN/Model_12_1/model_simple.h5'
+                    file_flatten = 'Desktop/CNN/Flatten_Output/12_1/12_1_flatten_out.csv'
                     file_weight = 'Desktop/CNN/Weight/12_1/12_1_weight.txt'
                     file_matrix = 'Desktop/CNN/Model_12_1/Matrice confusione/matrix_12_1.txt'
+                    file_value = 'Desktop/CNN/Model_12_1/values.txt'
                     errore_scelta = 0
                 else:
                     errore_scelta = errore_scelta + 1
@@ -80,6 +84,7 @@ print("Model file: ", file_model)
 print("Directory Flatten Output: ", file_flatten)
 print("Directory Weight Output: ", file_weight)
 print("Directory Matrix Confusion: ", file_matrix)
+print("File Values: ", file_value)
 print("------------------------------------------------")
 
 json_file = open(file_json, 'r')
@@ -137,6 +142,10 @@ for img in tqdm(os.listdir(path_test_dog)):
         count_no = count_no + 1
         
 print("Caricamento completato!")    
+
+print("Livelli CNN:")
+print
+print(loaded_model.summary())
         
 print("----------------------------------------")
 print("Matrice di confusione:")
@@ -146,44 +155,52 @@ matrix_conf = confusion_matrix(y_test,y_pred_class)
 print(matrix_conf)
 print
 print("_______________________________________")
+
+print("----------------VALORI------------------------")
+values = classification_report(y_test, y_pred_class)
+print(values)
+print("----------------------------------------------")
         
 print("Salvataggio output livello di flatten...")
 print("Livello input: ", loaded_model.layers[0].output)
-print("Livello output: ", loaded_model.layers[4].output)
+print("Livello output: ", loaded_model.layers[6].output)
 print(" ")
 
 #Cancellazione del file obsoleto per poter scrivere il nuovo output del flatten
 try:
     os.remove(file_flatten)
     os.remove(file_weight)
-    print("----------------------> File rimosso con successo!")
+    os.remove(file_matrix)
+    os.remove(file_value)
+    print("----------------------> File rimosso/i con successo!")
 except:
-    print("----------------------> File inesistente...")
+    print("----------------------> File inesistente/i...")
     
 file_out = open(file_flatten, "a") #Creazione file per la scrittura del flatten
 file_out_weight = open(file_weight, "a") #Creazione file per la scrittura dei pesi del flatten
 file_out_matrix = open(file_matrix, "a")
+file_out_value = open(file_value, "a")
 print("-----------------------------------> Creazione file...")
 
 #-----------Creazione file di feature uscente dal flatten-------------------------
 get_3rd_layer_output = K.function([loaded_model.layers[0].input],
-                                  [loaded_model.layers[4].output])
+                                  [loaded_model.layers[6].output])
 classe = "Gatto" #Classe di appartenenza della feature
-control = 0 #Variabile di controllo
 
 for count in range(0, len(x_test)):
-    if count > 699 and control == 0:
+    if y_test[count] == 0:
+        classe = "Gatto"
+    else:
         classe = "Cane"
-        control = 1
     layer_output = get_3rd_layer_output([x_test[count]])[0]
     output = str(layer_output.tolist())
     output = output.replace("[[","")
     output = output.replace("]]","")
-    file_out.write("[")
+    output = output.replace(",",";")
+    output = output.replace(".",",")
     file_out.write(output)
-    file_out.write(", ")
+    file_out.write("; ")
     file_out.write(classe)
-    file_out.write("]")
     file_out.write("\n")
 #-----------------------------------------------------------------------------------
 
@@ -197,6 +214,9 @@ fourth_layer_weights  = loaded_model.layers[0].get_weights()
 file_out_weight.write(str(fourth_layer_weights))
 print("-----------------------------------------------------> File di weight creato/modificato con successo!")
 file_out_weight.close()
+file_out_value.write(values)
+print("-----------------------------------------------------------> File di valori creato con successo!")
+file_out_value.close()
 
 print("_______________________________________")
 print("Classificazione corretta: ", count_ok)
