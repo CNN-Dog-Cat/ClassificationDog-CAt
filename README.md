@@ -1,4 +1,4 @@
-# Riconoscimento visivo di un cane/gatto per classi sbilanciate
+# Riconoscimento visivo di un cane/gatto per classi sbilanciate e confronto tra vari classificatori
 
 <img src="https://live.staticflickr.com/3640/3639419066_d8de3661a2_b.jpg"/>
 
