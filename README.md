@@ -46,4 +46,7 @@ Per creare il dataset è possibile accedere a [questo sito](https://download.mic
 
 ### CNN 6 Layers
 <img src="https://github.com/CNN-Dog-Cat/ClassificationDog-Cat/blob/master/Tabella%20Valori/ValoriCNN6.jpg"/>
+
+## CNN4 vs CNN6
+<img src="https://github.com/CNN-Dog-Cat/ClassificationDog-Cat/blob/master/Grafici/ClassError.jpg"/>
     
